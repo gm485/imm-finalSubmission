@@ -1,0 +1,9 @@
+Contribution Statement Unity Project
+
+b00156485 Gary Murtagh
+Worked with Scene set up by Anime, handled game manager and UI elements. player movement and camera controls, also how the obstacles move forward.
+ 
+b00154257 Anime Chennit
+Set Up Scene players, and obstacles, added tags to all assest's
+Created spawn positions for the obstacles in spawn manager 
+
