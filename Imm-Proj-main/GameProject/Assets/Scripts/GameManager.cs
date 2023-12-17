@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     private SpawnManager spawnManager;
     private int score = 0;
     public TextMeshProUGUI gameOverText;
+    public TextMeshProUGUI WinnerText;
     //check for game active
     public bool isGameActive;
     //access for player movement which detects collisions
@@ -52,6 +53,14 @@ public class GameManager : MonoBehaviour
         restartButton.gameObject.SetActive(true);
     }
 
+    public void WinGame()
+    {
+        isGameActive = false;
+        WinnerText.gameObject.SetActive(true);
+        restartButton.gameObject.SetActive(true);
+        gameOverText.gameObject.SetActive(false);
+    }
+
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -65,6 +74,11 @@ public class GameManager : MonoBehaviour
         UpdateScore(0);
         spawnManager.SpawnObstacles();
         titleScreen.gameObject.SetActive(false);
+    }
+
+    public void LinkGit()
+    {
+        Application.OpenURL("https://github.com/gm485/IMM_Project");
     }
     
 }

@@ -14,7 +14,7 @@ public class PlayerMovementX : MonoBehaviour
     public bool isOnGround = true;
     private Rigidbody playerRb;
     public float zRange = 0;
-    public float yRange = 9;
+    public float yRange = 9.50f;
     public bool gameOver = false;
     public bool levelCompletion = false;
     private GameManager gameManager;
@@ -42,11 +42,12 @@ public class PlayerMovementX : MonoBehaviour
             explosionParticle.Play();
         }
 
-        //keep player in bounds on map end game if they fall off the platform 
+        //end game if they fall off the platform 
         if (transform.position.y < yRange)
         {
             Debug.Log("Game Over");
             Destroy(gameObject);
+            gameManager.GameOver();
         }
     }
 
@@ -68,6 +69,8 @@ public class PlayerMovementX : MonoBehaviour
         {
             levelCompletion = true;
             Debug.Log("Level Complete");
+            gameManager.WinGame();
+            
 
         }
     }
